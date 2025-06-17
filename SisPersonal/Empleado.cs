@@ -22,6 +22,10 @@ namespace EspacioEmpleado
             set => fechaNacimiento = value;
         }
         
+        private int edad, antiguedad;
+        public int Edad { get => edad; }
+        public int Antiguedad { get => antiguedad; }
+
         private char estadoCivil;
         public char EstadoCivil{
             get => estadoCivil;
@@ -41,6 +45,12 @@ namespace EspacioEmpleado
         }
 
         private Cargos cargos;
+
+        public void CalcularEdadyAntiguedad(DateTime hoy){
+
+            edad = hoy.Year - fechaNacimiento.Year;
+            antiguedad = hoy.Year - fechaIngreso.Year;
+        }
 
     }
 }

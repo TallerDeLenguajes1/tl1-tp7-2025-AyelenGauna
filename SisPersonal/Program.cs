@@ -33,4 +33,18 @@ if (DateTime.TryParse(fecha,out fechaI))
     Console.WriteLine("\nEl dato ingresado no es una fecha");
 }
 
+Console.WriteLine("Ingresa la fecha de nacimiento del empleado (por ejemplo, 17/06/2025): ");
+fecha = Console.ReadLine();
+
+if (DateTime.TryParse(fecha,out fechaI))
+{
+    empleado.FechaNacimiento = fechaI;
+    Console.WriteLine($"Fecha de ingreso del empleado: {empleado.FechaNacimiento.ToString("dd/MM/yyyy")}\n");
+}else
+{
+    Console.WriteLine("\nEl dato ingresado no es una fecha");
+}
+
+empleado.CalcularEdadyAntiguedad(Hoy);
+Console.WriteLine($"Edad del empleado: {empleado.Edad}\n");
 
